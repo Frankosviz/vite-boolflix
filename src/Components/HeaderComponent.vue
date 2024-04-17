@@ -3,6 +3,7 @@
         <h2>
             <a href="#">BoolFlix</a>
         </h2>
+        <input class="" type="search" placeholder="Cerca" />
     </div>
 </template>
 
@@ -30,6 +31,13 @@
         font-size: 30px;
         text-decoration: none;
         font-weight: light;
+    }
+
+    input {
+        width: 300px;
+        height: 30px;
+        border-radius: 10px;
+        font-weight: bold;
     }
 
 </style>

@@ -1,15 +1,13 @@
 <template>
   <HeaderComponent />
-  <SearchbarComponent />
   <CardListComponent />
-  <CardComponent />
+  <!-- Qui ho omesso CardComponent perchè gia presente nel componente padre CardlistComponent -->
 </template>
 
 <script>
 import axios from 'axios';
 import { store } from './store.js';
 import HeaderComponent from './Components/HeaderComponent.vue';
-import SearchbarComponent from './Components/SearchbarComponent.vue';
 import CardListComponent from './Components/CardListComponent.vue';
 import CardComponent from './Components/CardComponent.vue';
 
@@ -17,7 +15,6 @@ export default {
   name: 'App',
   components: {
     HeaderComponent,
-    SearchbarComponent,
     CardListComponent,
     CardComponent
   },

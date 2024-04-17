@@ -1,15 +1,17 @@
 <template>
-    <div>
+    <div class="d-flex flex-wrap p-5">
+        <CardComponent />
     </div>
 </template>
 
 <script>
-    import CardListComponent from './CardListComponent.vue'
-    export default {
-        name : 'CardListComponent',
+import CardComponent from './CardComponent.vue';
+export default {
+    name: 'CardListComponent',
+    components: {
+        CardComponent
     }
+}
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

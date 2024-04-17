@@ -1,15 +1,38 @@
 <template>
-    <div>
+
+    <div class="f-d-card">
     </div>
+
 </template>
 
 <script>
-    import CardComponent from './CardComponent.vue'
-    export default {
-        name : 'CardComponent'
+import { store } from '../store.js'
+export default {
+    name: 'CardComponent',
+    data() {
+        return {
+            store
+        }
+    },
+    methods: {
+        getImagePath(path) {
+            return this.store.imageUrl + path
+        }
     }
+}
 </script>
 
 <style lang="scss" scoped>
-
+    .f-d-card {
+        width: 300px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
 </style>
