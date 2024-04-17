@@ -1,11 +1,26 @@
 <template>
+  <HeaderComponent />
+  <SearchbarComponent />
+  <CardListComponent />
+  <CardComponent />
 </template>
 
 <script>
 import axios from 'axios';
 import { store } from './store.js';
+import HeaderComponent from './Components/HeaderComponent.vue';
+import SearchbarComponent from './Components/SearchbarComponent.vue';
+import CardListComponent from './Components/CardListComponent.vue';
+import CardComponent from './Components/CardComponent.vue';
+
 export default {
   name: 'App',
+  components: {
+    HeaderComponent,
+    SearchbarComponent,
+    CardListComponent,
+    CardComponent
+  },
   data() {
     return {
       store
@@ -21,14 +36,14 @@ export default {
       axios.get(this.store.apiUrl + this.store.endPoint.tv, this.store.options).then((res) => {
         console.log(res.data.results);
       })
-    },
-    created() {
+    }
+  },
+  created() {
       this.getMovies();
       this.getTvSeries();
-      console.log('ciao');
     }
-  }
 }
+
 
 </script>
 
