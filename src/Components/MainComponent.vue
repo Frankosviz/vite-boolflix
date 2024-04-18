@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="f-d-main">
         <CardListComponent title="Movies" :list="store.movies"/>
         <CardListComponent title="Tv Series" :list="store.tv"/>
     </div>
@@ -24,5 +24,11 @@
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/partials/variables' as *;
 
+    .f-d-main {
+        min-height: 100vh;
+        padding-top: 100px;
+        background-color: $body-color;
+    }
 </style>
