@@ -9,11 +9,12 @@ export const store = reactive({
     options: {
         params: {
             api_key: '8c01fefc2763c1d51cbd748c17c53732',
-            query: '',
+            // Il nostro query lo abbiamo collegato al v-model della searchbar
+            query: "",
         }
 
     },
+    imageUrl: 'http://image.tmdb.org/t/p/original',
     movies: [],
-    imageUrl: 'http://image.tmdb.org/t/p/original'
-
-})
+    tv: [],
+});

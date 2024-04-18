@@ -1,8 +1,6 @@
 <template>
-
     <div class="f-d-card">
     </div>
-
 </template>
 
 <script>
@@ -15,9 +13,6 @@ export default {
         }
     },
     methods: {
-        getImagePath(path) {
-            return this.store.imageUrl + path
-        }
     }
 }
 </script>

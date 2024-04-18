@@ -3,14 +3,25 @@
         <h2>
             <a href="#">BoolFlix</a>
         </h2>
-        <input class="" type="search" placeholder="Cerca" />
+        <input class="" type="search" placeholder="Cerca" @keyup.enter="searchMedia" v-model.trim="store.options.params.query"/>
+        <button class="btn btn-outline-danger" @click="searchMedia"></button>
     </div>
 </template>
 
 <script>
-    import HeaderComponent from './HeaderComponent.vue'
+    import { store } from '../store.js'
     export default {
         name: 'HeaderComponent',
+        data() {
+            return {
+                store
+            }
+        },
+        methods : {
+            searchMedia(){
+                this.$emit('searchApi');
+            }
+        }
     }
 </script>
 
@@ -24,6 +35,10 @@
         align-items: center;
         padding: 20px;
         text-transform: uppercase;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
     }
 
     a {
@@ -36,7 +51,7 @@
     input {
         width: 300px;
         height: 30px;
-        border-radius: 10px;
+        border-radius: 5px;
         font-weight: bold;
     }
 
