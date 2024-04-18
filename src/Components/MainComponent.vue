@@ -1,7 +1,7 @@
 <template>
     <div class="f-d-main">
-        <CardListComponent title="Movies" :list="store.movies"/>
-        <CardListComponent title="Tv Series" :list="store.tv"/>
+        <CardListComponent title="Movies" :list="store.movies" />
+        <CardListComponent title="Tv Series" :list="store.tv" />
     </div>
 </template>
 

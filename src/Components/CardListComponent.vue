@@ -26,6 +26,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/partials/variables' as *;
+    .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        background-color: $body-color;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+
     // .f-d-layer {
     //     width: 100%;
     //     height: 100%;
@@ -37,6 +50,6 @@ export default {
     h2 {
         color: white;
         font-weight: bold;
-        font-size: 30px;
+        font-size: 40px;
     }
 </style>
