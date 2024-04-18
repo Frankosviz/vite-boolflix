@@ -1,6 +1,12 @@
 <template>
-    <div class="d-flex flex-wrap p-5">
-        <CardComponent />
+    <div class="container">
+        <h2>{{ title }}</h2>
+        <div class="row gy-4">
+            <div class="col-12 col-md-6 col-lg-3" v-for="(card, index) in list" :key="card.id">
+                <CardComponent :item="card" />
+
+            </div>
+        </div>
     </div>
 </template>
 
@@ -10,6 +16,10 @@ export default {
     name: 'CardListComponent',
     components: {
         CardComponent
+    },
+    props: {
+        title: String,
+        list: Array
     }
 }
 </script>
