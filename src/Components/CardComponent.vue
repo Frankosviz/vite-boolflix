@@ -8,17 +8,17 @@
 
                 <h4 class="card-title">{{ item.title || item.name }}</h4>
                 <h6 class="card-title"><em class="fw-lighter">{{ item.original_title || item.original_name }}</em></h6>
+                
                 <div class="flag">
-                    <img :src="`../images/${item.original_language}.png`" :alt="item.original_language + 'flag'">
+                    <img :src="imgflag" :alt="item.original_language + 'flag'">
                 </div>
+                
                 <div>
                     {{ item.vote_average }}
                 </div>
+                
                 <!-- <div class="card-text">
-                 <div class="flag">
-                    Div fatto per le bandiere
-                    <img :src="imgflag" :alt="item.original_language + 'flag'">
-                </div> 
+                 
                  <div class="stars">
                     Div fatto per le stelline
                     <i :class="{'fa-solid' : n <= voteStar, 'fa-regular': n > voteStar}" class="fa-star" v-for="n in 5"></i>
@@ -47,15 +47,17 @@ export default {
     },
     methods: {
     },
-    // computed: {
-    //     // computed fatta per le immagini
-    //     imgflag() {
-    //         if(this.flags.includes(this.item.original_language)) {
-    //             return `${this.item.original_language}.png`;
-    //         } else {
-    //             return '/images/';
-    //         }
-    //     },
+
+    computed: {
+     // computed fatta per la restituzioni di immagini, se le ho nel mio return data... altrimenti restituisce immagine placeholder
+    imgflag() {
+            if(this.flags.includes(this.item.original_language)) {
+                return `/images/${this.item.original_language}.png`;
+            } else {
+                return '/images/Placeholder.png';
+            }
+        },
+    }
     //     // computed fatta per le stelline
     //     voteStar() {
     //     return math.cell(this.item.vote_average / 2)
